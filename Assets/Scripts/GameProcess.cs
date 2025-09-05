@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using TMPro;
 using UnityEngine;
 
@@ -8,12 +9,14 @@ public class GameProcess : MonoBehaviour
     private float time;
     private bool isEndGame = false;
     [SerializeField] private Parameters parameters;
-    [SerializeField] private Watcher watcher;
+    [SerializeField] private List<Watcher> watchers;
     [SerializeField] private Player player;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioSource seAudioSource;
     [SerializeField] private List<Animator>  animators;
     [SerializeField] private GameObject ResultWindow;
+    [SerializeField] private LoadSceneButton RetryButton;
+    [SerializeField] private GameObject NextButton;
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private AudioClip bombSE;
     private Player player2;
@@ -29,10 +32,15 @@ public class GameProcess : MonoBehaviour
     {
         if (isEndGame) return;
         time += Time.deltaTime;
-        if (watcher.WatchPlayerMove())
+        foreach (Watcher watcher in watchers)
         {
-            StartCoroutine("gameFail");
+            if (watcher.WatchPlayerMove())
+            {
+                StartCoroutine(nameof(gameFail));
+                break;
+            }
         }
+        
         //Debug.Log("動きを確認"+watcher.WatchPlayerMove());
 
         if (player.Pos.x < -parameters.ClearLine || player.Pos.x > parameters.ClearLine)
@@ -63,6 +71,8 @@ public class GameProcess : MonoBehaviour
         // リザルト画面の表示
         resultText.text = "見つかってしまった…";
         ResultWindow.SetActive(true);
+        NextButton.SetActive(false);
+        RetryButton.isEnterable = true;
     }
     private IEnumerator gameClear()
     {
@@ -73,5 +83,7 @@ public class GameProcess : MonoBehaviour
         // リザルト画面の表示
         resultText.text = "Clear!\nTime:"+time+"s";
         ResultWindow.SetActive(true);
+        NextButton.SetActive(true);
+        RetryButton.isEnterable = false;
     }
 }

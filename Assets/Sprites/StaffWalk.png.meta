@@ -119,12 +119,12 @@ TextureImporter:
       name: StaffWalk_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 26
-        width: 94
-        height: 147
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 182
+        height: 182
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -141,12 +141,12 @@ TextureImporter:
       name: StaffWalk_1
       rect:
         serializedVersion: 2
-        x: 237
-        y: 15
-        width: 83
-        height: 158
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 182
+        y: 0
+        width: 182
+        height: 182
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -163,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b5be0a9a4777cb94f815e798bbc43bc7
     internalID: 0
     vertices: []
     indices: 

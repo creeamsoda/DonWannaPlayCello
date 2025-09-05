@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - OtherPlayers
   layers:
   - Default
   - TransparentFX
@@ -41,8 +42,23 @@ TagManager:
   - name: Back
     uniqueID: 356378299
     locked: 0
+  - name: line4
+    uniqueID: 2441208257
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: line3
+    uniqueID: 1656426367
+    locked: 0
+  - name: line2
+    uniqueID: 3760588311
+    locked: 0
+  - name: line1
+    uniqueID: 1963249553
+    locked: 0
+  - name: ConductorViewRange
+    uniqueID: 3182926567
     locked: 0
   - name: conductor
     uniqueID: 3927200345
